@@ -8,12 +8,26 @@
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 <script>
   const root = document.getElementById("root");
-  const span = React.createElement(
-    "span",
-    { id: "sexy-span", style: { color: "red" } },
+  const h3 = React.createElement(
+    "h3",
+    {
+      id: "title",
+      onMouseEnter: () => console.log("mouse enter"),
+    },
     "Hello I'm a span"
+  );  //JS로 element를 생성하고 HTML로 바꾸는 방식의 힘
+  const btn = React.createElement(
+    "button",
+    {
+      onClick: () => console.log("im clicked"), //addEventListener 대체
+      style: {
+        backgroundColor: "tomato",
+      },
+    },
+    "Click me"  //안에 들어갈 텍스트
   );
-  ReactDOM.createRoot(root).render(span);
+  const container = React.createElement("div", null, [h3, btn]);
+  ReactDOM.createRoot(root).render(container);
 </script>
 
 </html>
