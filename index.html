@@ -6,20 +6,21 @@
 </body>
 <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<!-- react element를 가져다가 HTML로 바꾸는 역할-->
 <script>
   const root = document.getElementById("root");
   const h3 = React.createElement(
-    "h3",
+    "h3", //root에 들어갈 HTML 태그
     {
-      id: "title",
-      onMouseEnter: () => console.log("mouse enter"),
+      id: "title", //일반적인 HTML태그의 속성을 바꿀 수 있음
+      onMouseEnter: () => console.log("mouse enter"), //props가 포함된 object
     },
-    "Hello I'm a span"
+    "Hello I'm a span" //content
   );  //JS로 element를 생성하고 HTML로 바꾸는 방식의 힘
   const btn = React.createElement(
     "button",
     {
-      onClick: () => console.log("im clicked"), //addEventListener 대체
+      onClick: () => console.log("im clicked"), //props 안에서 addEventListener 등록 가능
       style: {
         backgroundColor: "tomato",
       },
